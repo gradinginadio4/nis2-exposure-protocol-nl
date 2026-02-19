@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NIS2 Blootstellingsprotocol - Operationele structuur en compliance voor Belgische ondernemingen">
+    <title>NIS2 Blootstellingsprotocol | Homieux Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="https://homieuxmedia.com" target="_blank" rel="noopener noreferrer" class="logo-link">
+                <img src="logo-homieux.png" alt="Homieux Media Logo - Terug naar startpagina" class="logo">
+            </a>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="hero">
+                <h1 class="hero-title">NIS2 Blootstellingsprotocol</h1>
+                <p class="hero-subtitle">Operationele structuur en compliance voor Belgische ondernemingen</p>
+                <p class="hero-context">Evalueer uw blootstelling aan NIS2-verplichtingen en optimaliseer uw governance structuur.</p>
+            </div>
+
+            <div class="assessment-container">
+                <!-- Step 1: Entity Size -->
+                <div class="step active" id="step-1">
+                    <div class="step-header">
+                        <span class="step-number">1</span>
+                        <h2 class="step-title">Grootte van uw organisatie</h2>
+                    </div>
+                    <p class="step-description">De NIS2-richtlijn definieert verschillende verplichtingen op basis van de omvang van de entiteit.</p>
+                    
+                    <div class="options-grid">
+                        <button class="option-card" data-value="large" onclick="selectOption(1, 'large')">
+                            <div class="option-icon">🏢</div>
+                            <h3>Grote Onderneming</h3>
+                            <p>250+ werknemers of omzet > 50M€ / balans > 43M€</p>
+                            <span class="option-tag">Versterkte verplichtingen</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="medium" onclick="selectOption(1, 'medium')">
+                            <div class="option-icon">🏛️</div>
+                            <h3>Middelgrote Onderneming</h3>
+                            <p>50-249 werknemers of omzet 10-50M€</p>
+                            <span class="option-tag">Belangrijke verplichtingen</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="small" onclick="selectOption(1, 'small')">
+                            <div class="option-icon">🏘️</div>
+                            <h3>Kleine Organisatie</h3>
+                            <p>&lt; 50 werknemers en omzet &lt; 10M€</p>
+                            <span class="option-tag">Beperkte blootstelling</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Service Sensitivity -->
+                <div class="step" id="step-2">
+                    <div class="step-header">
+                        <span class="step-number">2</span>
+                        <h2 class="step-title">Gevoeligheid van diensten</h2>
+                    </div>
+                    <p class="step-description">Bepaalde beroepsactiviteiten vormen een hoog systeemrisico volgens Bijlage III van de NIS2-richtlijn.</p>
+                    
+                    <div class="options-grid">
+                        <button class="option-card" data-value="high" onclick="selectOption(2, 'high')">
+                            <div class="option-icon">⚖️</div>
+                            <h3>Advocatenkantoor / Notaris</h3>
+                            <p>Gevoelige juridische gegevens, beroepsgeheim, kritieke klantdata</p>
+                            <span class="option-tag">Hoog risico</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="high" onclick="selectOption(2, 'high')">
+                            <div class="option-icon">📊</div>
+                            <h3>Accountantskantoor / Bedrijfsrevisor</h3>
+                            <p>Gevoelige financiële gegevens, reglementaire reporting, fiscaliteit</p>
+                            <span class="option-tag">Hoog risico</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="medium" onclick="selectOption(2, 'medium')">
+                            <div class="option-icon">🏢</div>
+                            <h3>Managementconsulting</h3>
+                            <p>Strategische klantgegevens, gevoelige bedrijfsinformatie</p>
+                            <span class="option-tag">Gemiddeld risico</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="standard" onclick="selectOption(2, 'standard')">
+                            <div class="option-icon">🔧</div>
+                            <h3>Overige professionele diensten</h3>
+                            <p>Bedrijfsondersteuning zonder kritieke data-expositie</p>
+                            <span class="option-tag">Standaard risico</span>
+                        </button>
+                    </div>
+                    
+                    <button class="btn-back" onclick="goBack(2)">← Terug</button>
+                </div>
+
+                <!-- Step 3: Digital Infrastructure -->
+                <div class="step" id="step-3">
+                    <div class="step-header">
+                        <span class="step-number">3</span>
+                        <h2 class="step-title">Digitale infrastructuur</h2>
+                    </div>
+                    <p class="step-description">Evalueer uw technische blootstelling en incidentrespons capaciteiten.</p>
+                    
+                    <div class="options-list">
+                        <div class="option-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="cloud-infra" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <div class="checkbox-content">
+                                    <strong>Cloud infrastructuur (SaaS, PaaS, IaaS)</strong>
+                                    <span>Gegevens gehost bij derden (Microsoft 365, Google Workspace, AWS, etc.)</span>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="mfa-enabled" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <div class="checkbox-content">
+                                    <strong>Multi-factor authenticatie (MFA) geïmplementeerd</strong>
+                                    <span>Bescherming van bevoorrechte toegang en gevoelige gegevens</span>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="incident-process" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <div class="checkbox-content">
+                                    <strong>Gevestigd incidentmeldingsproces</strong>
+                                    <span>Gedocumenteerd proces voor melding bij het Centrum voor Cybersecurity België (CCB) binnen 24u</span>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="option-item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="supply-chain" class="checkbox-input">
+                                <span class="checkbox-custom"></span>
+                                <div class="checkbox-content">
+                                    <strong>Kritieke IT-leveranciers in de waardeketen</strong>
+                                    <span>Afhankelijkheid van essentiële technologieleveranciers</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="step-actions">
+                        <button class="btn-back" onclick="goBack(3)">← Terug</button>
+                        <button class="btn-primary" onclick="validateStep3()">Doorgaan →</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Governance Maturity -->
+                <div class="step" id="step-4">
+                    <div class="step-header">
+                        <span class="step-number">4</span>
+                        <h2 class="step-title">Governance volwassenheid</h2>
+                    </div>
+                    <p class="step-description">Het structuringsniveau van uw cyber governance bepaalt uw compliance verplichtingen.</p>
+                    
+                    <div class="options-grid">
+                        <button class="option-card" data-value="none" onclick="selectOption(4, 'none')">
+                            <div class="option-icon">⚠️</div>
+                            <h3>Geen formele structuur</h3>
+                            <p>Geen aangewezen cyber verantwoordelijke, geen gedocumenteerde beveiligingsbeleid</p>
+                            <span class="option-tag risk">Hoog risico</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="basic" onclick="selectOption(4, 'basic')">
+                            <div class="option-icon">📋</div>
+                            <h3>Basis governance</h3>
+                            <p>Geïdentificeerde IT-verantwoordelijke, eerste beveiligingsbeleid, ad hoc bewustmaking</p>
+                            <span class="option-tag">In ontwikkeling</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="structured" onclick="selectOption(4, 'structured')">
+                            <div class="option-icon">🛡️</div>
+                            <h3>Gestructureerde governance</h3>
+                            <p>Aangewezen CISO, geformaliseerde beleid, regelmatige audits</p>
+                            <span class="option-tag">Geavanceerde compliance</span>
+                        </button>
+                        
+                        <button class="option-card" data-value="iso" onclick="selectOption(4, 'iso')">
+                            <div class="option-icon">✓</div>
+                            <h3>ISO 27001 Certificering</h3>
+                            <p>Gecertificeerd ISMS, externe audits, regelmatige managementreview</p>
+                            <span class="option-tag success">Excellence</span>
+                        </button>
+                    </div>
+                    
+                    <button class="btn-back" onclick="goBack(4)">← Terug</button>
+                </div>
+
+                <!-- Step 5: Results -->
+                <div class="step" id="step-5">
+                    <div class="result-container">
+                        <div class="result-header">
+                            <h2 class="result-title">Uw NIS2 blootstellingsniveau</h2>
+                            <div class="tier-badge" id="tier-badge">Berekenen...</div>
+                        </div>
+                        
+                        <div class="result-content" id="result-content">
+                            <!-- Dynamic content inserted here -->
+                        </div>
+                        
+                        <div class="result-actions">
+                            <a href="https://cal.com/homieux-media/strategisch-kennismakingsgesprek-bespreek-uw-zakelijke-uitdagingen" target="_blank" rel="noopener noreferrer" class="btn-cta">
+                                Plan een kennismakingsgesprek van 15 minuten
+                            </a>
+                            <button class="btn-secondary" onclick="restartAssessment()">Nieuwe evaluatie</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>Regelgevende basis</h3>
+                <p>Dit instrument is gebaseerd op de <strong>Richtlijn (EU) 2022/2555 (NIS2)</strong>, omgezet in Belgisch recht door de <strong>Wet van 7 april 2024</strong> betreffende cybersecurity maatregelen. De evaluatiecriteria weerspiegelen de verplichtingen voor belangrijke en essentiële entiteiten zoals gedefinieerd door het Centrum voor Cybersecurity België (CCB).</p>
+                <p class="disclaimer">Deze evaluatie biedt strategische richting en vervangt geen formeel juridisch compliance audit.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="copyright">© 2026 Homieux Media</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://www.homieuxmedia.com/nl/privacybeleid" target="_blank" rel="noopener noreferrer">Privacybeleid</a>
+                    <span class="separator">|</span>
+                    <a href="https://www.homieuxmedia.com/nl/gebruiksvoorwaarden" target="_blank" rel="noopener noreferrer">Gebruiksvoorwaarden</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
